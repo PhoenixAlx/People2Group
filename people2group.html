@@ -1,0 +1,60 @@
+<!--
+   sin título.html
+   
+   Copyright 2014 Alex Bueno ( @Phoenix_alx )
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>People2Group</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.24.1" />
+	<script type="text/javascript" src="https://raw.githubusercontent.com/PhoenixAlx/People2Group/master/people2group.js"></script>
+</head>
+
+<body>
+	<form name="formGroups" id="formGroups">
+		<div id="divPeople" name="divPeople">
+			<input type="number" id="numPeople" name="numPeople" min=0 value=0/>
+			<label for="numPeople">Num people </label>
+		</div>
+		<div id="divGroups" name="divGroups">
+			<input type="number" id="numGroups" name="numGroups" oninput="addFields()" value=0/>
+			<label for="numPeople">Num groups </label>
+			<div id="listGroups" name="listGroups">
+			
+			</div>
+			<button type="button" id ="bSAddPerson" name="bSAddPerson" onclick="showElectionGroup()">start add people</button> 
+		</div>
+		
+		<div id="divElectionGroup" name="divElectionGroup">
+			<span>Person to Group</span><br/>
+			<canvas id="canvasElectionGroup" name ="canvasElectionGroup" style="width:300px;height:300px;border:2px solid;">
+				
+			</canvas><br/>
+			 <button type="button" name="bAddPerson" onclick="randomElectionGroup()">Next person</button> 
+		</div>
+	</form>
+</body>
+
+</html>
+ 
