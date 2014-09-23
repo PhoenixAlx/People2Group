@@ -20,6 +20,7 @@
  * 
  * 
  */
+ //https://rawgit.com/PhoenixAlx/People2Group/master/
 // Variables globales
 var Temporizador2 = 0; // ID del Temporizador2
 var Context;          // Contexto gráfico
@@ -29,6 +30,7 @@ var PosTexto = 0;     // Caracter actual
 var Texto = "";       // Cadena de texto a animar
 var maxGroup=0;
 var personInGroup=1;
+
 
 window.onload = initShow;
 function initShow(){
@@ -150,16 +152,39 @@ function showElectionStart(){
 	
 	
 }
+function resetAll(){
+	
+	var divElectionGroup= document.getElementById("divElectionGroup");
+	
+	divElectionGroup.style.display="none";
+	maxGroup=0;
+	personInGroup=1;
+	document.getElementById("numGroups").value="0";
+	document.getElementById("numPeople").value="0";
+    var node = document.getElementById("dgroup");
+	if (node.parentNode) {
+	  node.parentNode.removeChild(node);
+	}
+	
+}
+
 
 function addFields(){
             // Number of inputs to create
-            var number = document.getElementById("numGroups").value;
+            var tNumber = document.getElementById("numGroups").value;
+            var number=parseInt(tNumber);
             // Container <div> where dynamic content will be placed
             var container = document.getElementById("listGroups");
+            
             // Clear previous contents of the container
             while (container.hasChildNodes()) {
                 container.removeChild(container.lastChild);
             }
+            var divG = document.createElement("div");
+            divG.name = "dgroup";
+            divG.id = "dgroup";
+            container.appendChild(divG);
+            container = document.getElementById("dgroup");
             for (i=0;i<number;i++){
                 // Append a node with a random text
                 container.appendChild(document.createTextNode("Size Group " + (i+1)));
@@ -190,6 +215,7 @@ function addFields(){
                 container.appendChild(ouput);
                 // Append a line break 
                 container.appendChild(document.createElement("br"));
+               
 
             }
             maxGroup=number;
