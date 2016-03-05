@@ -1,4 +1,4 @@
 People2Group
 ============
 
-Add people to group of diverse size randomly
+Add people randomly to groups of diverse size 
